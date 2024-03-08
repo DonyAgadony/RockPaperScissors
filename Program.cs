@@ -16,6 +16,7 @@ class Program
 {
     public static void Main()
     {
+        int score = int.MinValue;
         HttpListener listener = new();
         listener.Prefixes.Add("http://*:5000/");
         listener.Start();
@@ -72,6 +73,18 @@ class Program
             else if (absPath == "/getPlayers")
             {
                 string jsonString = JsonSerializer.Serialize(players);
+                byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
+                response.OutputStream.Write(jsonBytes);
+            }
+            else if (absPath == "/addScore")
+            {
+                string scoreString = GetBody(request);
+                Console.WriteLine(scoreString);
+                score = JsonSerializer.Deserialize<int>(scoreString)!;
+            }
+            else if (absPath == "/getScore")
+            {
+                string jsonString = JsonSerializer.Serialize(score);
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
                 response.OutputStream.Write(jsonBytes);
             }

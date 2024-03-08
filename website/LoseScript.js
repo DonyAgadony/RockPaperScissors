@@ -1,10 +1,6 @@
-let point = 0;
 
-function lose(points) {
-    point = points;
+async function lose(count) {
     window.location.href = "./lose.html";
-    console.log("The points are:" + points);
-    console.log(point);
 }
 function CheckUserNameValid() {
     var name = document.getElementById("Username").value;
