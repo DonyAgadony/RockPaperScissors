@@ -10,10 +10,9 @@ function ComputerMove() {
 function GameOn(move) {
     var computerMove = ComputerMove();
     if (move == "rock") {
-        if (computerMove == "rock") { console.log("You win! Paper beats rock"); counter++; console.log(counter); }
+        if (computerMove == "rock") { console.log("Its a tie");}
         if (computerMove == "paper") { console.log("You lose! Paper beats "); lose(counter); }
         else if (computerMove == "scissors") { console.log("You win! Rock beats scissors"); counter++; }
-        else { console.log("It's a tie!"); }
     }
     else if (move == "paper") {
         if (computerMove == "rock") { console.log("You win! Paper beats rock"); counter++; console.log(counter); }

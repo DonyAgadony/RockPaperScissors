@@ -8,9 +8,9 @@ using System.Text;
 
 class Player(string name, int points)
 {
-    public string name { get; set; }
+    public string Name { get; set; } = name;
 
-    public int points { get; set; }
+    public int Points { get; set; } = points;
 
 }
 
@@ -71,7 +71,7 @@ class Program
                 Player player = JsonSerializer.Deserialize<Player>(playerString)!;
                 players = [.. players, player];
             }
-            else if (absPath == "/getplayers")
+            else if (absPath == "/getPlayers")
             {
                 string jsonString = JsonSerializer.Serialize(players);
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
