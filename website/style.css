@@ -97,7 +97,6 @@ h1 {
     letter-spacing: 0.05em;
     width: 80%;
     text-align: center;
-    transition: 0.5s;
 }
 
 .rules {
@@ -114,13 +113,15 @@ h1 {
 }
 
 .scoreboard {
+    text-transform: uppercase;
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     justify-self: center;
     padding-top: 30%;
-    padding-left: auto;
-    padding-right: auto;
+    padding-left: 50%;
+    padding-right: 50%;
 }
 
 #sbutton {
@@ -152,20 +153,37 @@ h1 {
     padding-left: 30px;
 }
 
-.ScoreboardTR {
-    border: 7em solid #170c18;
+table {
+    position: relative;
+
+    border-collapse: collapse;
 }
-.TH{
-    font-size: 9em;   
+
+th {
+    background: #ccc;
 }
-h3 {
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 35px;
+}
+
+tr:nth-child(even) {
+    background: #d7d7d7;
+}
+
+tr:nth-child(odd) {
+    background: #efefef;
+}
+
+tr:hover {
+    background: #d1d1d1;
+}
+
+.everything {
     display: flex;
     justify-content: center;
-    position: absolute;
-    font-size: 5em;
-    color: white;
-    letter-spacing: 0.05em;
-    width: 80%;
-    text-align: center;
-    transition: 0.5s;
+    align-items: center;
+    flex-direction: column;
 }
