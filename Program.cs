@@ -80,7 +80,7 @@ class Program
             {
                 string scoreString = GetBody(request);
                 Console.WriteLine(scoreString);
-                score = JsonSerializer.Deserialize<int>(scoreString)!;
+                score = int.Parse(scoreString);
             }
             else if (absPath == "/getScore")
             {
