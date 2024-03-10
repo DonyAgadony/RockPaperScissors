@@ -16,5 +16,7 @@ async function CreateScoreboard() {
         console.log(pointsCell.innerText);
         table.appendChild(row);
     }
-
+}
+window.onload == async function () {
+    await CreateScoreboard();
 }

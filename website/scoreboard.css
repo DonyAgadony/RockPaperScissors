@@ -1,0 +1,92 @@
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background: #ccc;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 35px;
+}
+
+tr:nth-child(even) {
+    background: #d7d7d7;
+}
+
+tr:nth-child(odd) {
+    background: #efefef;
+}
+
+tr:hover {
+    background: #d1d1d1;
+}
+
+*::before * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2e293a;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-size: 9em;
+    top: 10px;
+    color: white;
+    letter-spacing: 0.05em;
+    width: 80%;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sbutton {
+    border-radius: .25rem;
+    text-transform: uppercase;
+    font-style: normal;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #fff;
+    font-size: 2em;
+    line-height: 14px;
+    letter-spacing: 1.2px;
+    transition: .2s .1s;
+    background-image: linear-gradient(90deg, #272331, #6220fb);
+    border: 0 solid;
+    overflow: hidden;
+    width: 500px;
+    height: 100px;
+}
+
+#sbutton:hover {
+    cursor: pointer;
+    transition: all .3s ease-in;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.everything {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
