@@ -1,4 +1,3 @@
-
 var table = document.getElementById("table");
 async function CreateScoreboard() {
     let response = await fetch("/getPlayers");
@@ -7,33 +6,15 @@ async function CreateScoreboard() {
     for (let i = 0; i < json.length; i++) {
         let row = document.createElement('tr');
         let nameCell = document.createElement('td')
-        console.log
         nameCell.innerText = json[i].Name;
+        console.log(nameCell.innerText);
         row.appendChild(nameCell);
         let pointsCell = document.createElement("td");
         table.appendChild(pointsCell);
-        pointsCell.innerText = json[i].Points;
         row.appendChild(pointsCell);
+        pointsCell.innerText = json[i].Points;
+        console.log(pointsCell.innerText);
         table.appendChild(row);
     }
 
-}
-
-async function addPlayer(name, points) {
-    let player = {
-        Name: name,
-        Points: points
-    };
-    console.log(player);
-
-    let playerString = JSON.stringify(player);
-
-
-    await fetch("/addPlayer", {
-        method: "POST",
-        body: playerString,
-    });
-}
-if (window.location == './scoreboard.html') {
-    CreateScoreboard();
 }

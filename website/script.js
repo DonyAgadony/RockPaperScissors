@@ -27,36 +27,19 @@ function GameOn(move) {
     }
     console.log(counter);
 }
-function CheckUserNameValid() {
-    var name = document.getElementById("Username").value;
+async function CheckUserNameValid() {
+    var name = document.getElementById("Username");
     if (name != "" && name != null) {
-        window.location.href = "./scoreboard.html";
         point = GetScore();
-        addPlayer(name, point);
-        CreateScoreboard();
+        addPlayer(name.value);
+        await CreateScoreboard();
+        window.location.href = "./scoreboard.html";
     }
 }
 
-var table = document.getElementById("table");
-async function CreateScoreboard() {
-    let response = await fetch("/getPlayers");
-    let json = await response.json();
-    console.log(json);
-    for (let i = 0; i < json.length; i++) {
-        let row = document.createElement('tr');
-        let nameCell = document.createElement('td')
-        nameCell.innerText = json[i].Name;
-        row.appendChild(nameCell);
-        let pointsCell = document.createElement("td");
-        table.appendChild(pointsCell);
-        pointsCell.innerText = json[i].Points;
-        row.appendChild(pointsCell);
-        table.appendChild(row);
-    }
 
-}
-
-async function addPlayer(name, points) {
+async function addPlayer(name) {
+    var points = await GetScore();
     let player = {
         Name: name,
         Points: points
@@ -65,7 +48,7 @@ async function addPlayer(name, points) {
 
     let playerString = JSON.stringify(player);
 
-
+    console.log("adds player");
     await fetch("/addPlayer", {
         method: "POST",
         body: playerString,
@@ -86,9 +69,9 @@ async function GetScore() {
     console.log(json);
     return json;
 }
-
-if (window.location == './scoreboard.html') {
+window.onload = function () {
     CreateScoreboard();
 }
+
 
 localStorage.setItem("counter", counter);

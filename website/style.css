@@ -116,7 +116,6 @@ h1 {
 
 .scoreboard {
     text-transform: uppercase;
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +127,6 @@ h1 {
     border-radius: .25rem;
     text-transform: uppercase;
     font-style: normal;
-
     padding-left: 25px;
     padding-right: 25px;
     color: #fff;
@@ -151,8 +149,6 @@ h1 {
 }
 
 table {
-    position: relative;
-
     border-collapse: collapse;
 }
 

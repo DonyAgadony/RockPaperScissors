@@ -66,7 +66,6 @@ class Program
             else if (absPath == "/addPlayer")
             {
                 string playerString = GetBody(request);
-                Console.WriteLine(playerString);
                 Player player = JsonSerializer.Deserialize<Player>(playerString)!;
                 players = [.. players, player];
             }
@@ -75,12 +74,14 @@ class Program
                 string jsonString = JsonSerializer.Serialize(players);
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
                 response.OutputStream.Write(jsonBytes);
+                Console.WriteLine(jsonString);
             }
             else if (absPath == "/addScore")
             {
                 string scoreString = GetBody(request);
                 Console.WriteLine(scoreString);
                 score = int.Parse(scoreString);
+                Console.WriteLine(score);
             }
             else if (absPath == "/getScore")
             {
