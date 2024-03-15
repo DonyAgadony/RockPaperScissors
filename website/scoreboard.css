@@ -1,34 +1,9 @@
-table {
-    border-collapse: collapse;
-}
-
-th {
-    background: #ccc;
-}
-
-th,
-td {
-    border: 1px solid #ccc;
-    padding: 35px;
-}
-
-tr:nth-child(even) {
-    background: #d7d7d7;
-}
-
-tr:nth-child(odd) {
-    background: #efefef;
-}
-
-tr:hover {
-    background: #d1d1d1;
-}
 
 *::before * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    
     font-family: 'Poppins', 'sans-serif';
 }
 
@@ -40,24 +15,21 @@ body {
     min-height: 100vh;
     background: #2e293a;
 }
-
-h1 {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    font-size: 9em;
-    top: 10px;
-    color: white;
-    letter-spacing: 0.05em;
-    width: 80%;
-    text-align: center;
-}
-
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
+
+.title h1 {
+    display: flex;
+    font-size: 9em;
+    color: white;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
 
 #sbutton {
     border-radius: .25rem;
@@ -89,4 +61,30 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: fit-content;
+}
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background: #6220fb;
+}
+
+th,
+td {
+    border: 1px solid #6220fb;
+    padding: 35px;
+}
+
+tr:nth-child(even) {
+    background: #d7d7d7;
+}
+
+tr:nth-child(odd) {
+    background: #efefef;
+}
+
+tr:hover {
+    background: #d1d1d1;
 }

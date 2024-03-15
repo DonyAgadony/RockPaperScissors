@@ -71,7 +71,7 @@ class Program
             }
             else if (absPath == "/getPlayers")
             {
-                string jsonString = JsonSerializer.Serialize(players);
+                string jsonString = JsonSerializer.Serialize(GetTopTen(players));
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonString);
                 response.OutputStream.Write(jsonBytes);
                 Console.WriteLine(jsonString);
@@ -93,6 +93,13 @@ class Program
 
             response.Close();
         }
+    }
+    public static Player[] GetTopTen(Player[] players)
+    {
+        return players.OrderBy((player) =>
+        {
+            return player.Points;
+        }).ToArray()[..10];
     }
     public static string GetBody(HttpListenerRequest request)
     {

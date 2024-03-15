@@ -5,6 +5,9 @@ async function CreateScoreboard() {
     console.log(json);
     for (let i = 0; i < json.length; i++) {
         let row = document.createElement('tr');
+        let celli = document.createElement('td')
+        celli.innerText = i+1;
+        row.appendChild(celli);
         let nameCell = document.createElement('td')
         nameCell.innerText = json[i].Name;
         console.log(nameCell.innerText);
@@ -17,6 +20,4 @@ async function CreateScoreboard() {
         table.appendChild(row);
     }
 }
-window.onload == async function () {
-    await CreateScoreboard();
-}
+CreateScoreboard();

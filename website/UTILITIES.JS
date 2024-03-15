@@ -10,16 +10,16 @@ async function GameOn(move) {
     var computerMove = ComputerMove();
     if (move == "rock") {
         if (computerMove == "rock") { console.log("Its a tie"); }
-        else if (computerMove == "paper") { console.log("You lose! Paper beats "); saveScore(); await CheckUserNameValid(); }
+        else if (computerMove == "paper") { console.log("You lose! Paper beats "); saveScore(); CheckUserNameValid(); }
         else if (computerMove == "scissors") { console.log("You win! Rock beats scissors"); counter++; saveScore(counter); }
     }
     else if (move == "paper") {
         if (computerMove == "rock") { console.log("You win! Paper beats rock"); counter++; console.log(counter); }
-        else if (computerMove == "scissors") { console.log("You lose! Scissors beats paper"); saveScore(); await CheckUserNameValid(); }
+        else if (computerMove == "scissors") { console.log("You lose! Scissors beats paper"); saveScore(); CheckUserNameValid(); }
         else { console.log("It's a tie!"); }
     }
     else {
-        if (computerMove == "rock") { console.log("You lose! Rock beats scissors"); saveScore(); await CheckUserNameValid(); }
+        if (computerMove == "rock") { console.log("You lose! Rock beats scissors"); saveScore(); CheckUserNameValid(); }
         else if (computerMove == "paper") { console.log("You win! Scissors beats paper"); counter++; console.log(counter); }
         else { console.log("It's a tie!"); }
     }
@@ -32,10 +32,11 @@ async function CheckUserNameValid() {
     if (name == "" || name == null) {
         name = "unknown";
     }
-    window.location.href = "./scoreboard.html";
     console.log("adding Player");
     addPlayer(name);
-    await CreateScoreboard();
+    console.log(addPlayer(name));
+    window.location.href = "./scoreboard.html";
+    CreateScoreboard();
 }
 
 async function addPlayer(name) {
