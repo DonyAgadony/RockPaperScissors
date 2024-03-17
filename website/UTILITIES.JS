@@ -34,7 +34,6 @@ async function CheckUserNameValid() {
     }
     console.log("adding Player");
     addPlayer(name);
-    console.log(addPlayer(name));
     window.location.href = "./scoreboard.html";
     CreateScoreboard();
 }

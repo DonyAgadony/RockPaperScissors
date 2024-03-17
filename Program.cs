@@ -96,10 +96,22 @@ class Program
     }
     public static Player[] GetTopTen(Player[] players)
     {
-        return players.OrderBy((player) =>
+        Console.WriteLine(players.Length);
+        if (players.Length > 10)
         {
-            return player.Points;
-        }).ToArray()[..10];
+
+            return players.OrderBy((player) =>
+            {
+                return -player.Points;
+            }).Reverse().ToArray()[..10];
+        }
+        else
+        {
+            return players.OrderBy((player) =>
+            {
+                return -player.Points;
+            }).ToArray();
+        }
     }
     public static string GetBody(HttpListenerRequest request)
     {

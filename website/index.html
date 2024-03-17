@@ -11,8 +11,7 @@
         <div class="title">
             <h1>Choose Your Move:</h1>
         </div>
-
-
+        <!-- your move -->
         <div class="container">
             <div class="card">
                 <div class="imgBox">
@@ -36,14 +35,45 @@
                 <h2>Scissors</h2>
             </div>
         </div>
+        <!-- enemy's move -->
+        <div class="title">
+            <h2>Enemy's Move</h2>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="imgBox">
+                    <img src="rock.jpg" id="openModal">
+                </div>
+                <img src="rock-removebg-preview.png" class="card3D">
+                <h2>Rock</h2>
+            </div>
+            <div class="card">
+                <div class="imgBox">
+                    <img src="paper.jpg">
+                </div>
+                <img src="paper-removebg-preview.png" class="card3D">
+                <h2>Paper</h2>
+            </div>
+            <div class="card">
+                <div class="imgBox">
+                    <img src="scissors.jpg">
+                </div>
+                <img src="scissorsnobackground.png" class="card3D">
+                <h2>Scissors</h2>
+            </div>
+        </div>
         <br><br>
         <div class="scoreboard">
             <button onclick="window.location.href='./scoreboard.html'" id="sbutton"> Scoreboard</button>
         </div>
         <input placeholder="Username" id="username" type="text">
         <br>
+        <div class="buttondiv">
+            <div class="rulesdiv">
+                <button onclick="window.location.href='./rules.html'" class="rules">Dont Know How to play?</button>
+            </div>
+        </div>
     </div>
-    <button onclick="window.location.href='./rules.html'" class="rules">Dont Know How to play?</button>
     <script src="script.js"></script>
     <script src="UTILITIES.JS"></script>
 </body>
