@@ -15,21 +15,21 @@
         <div class="container">
             <div class="card">
                 <div class="imgBox">
-                    <img src="rock.jpg" id="openModal" onclick="GameOn('rock')">
+                    <img src="rock.jpg" onclick="GameOn('rock')" id="Rock">
                 </div>
                 <img src="rock-removebg-preview.png" class="card3D" onclick="GameOn('rock')">
                 <h2>Rock</h2>
             </div>
             <div class="card">
                 <div class="imgBox">
-                    <img src="paper.jpg" onclick="GameOn('paper')">
+                    <img src="paper.jpg" onclick="GameOn('paper')" id="Paper">
                 </div>
-                <img src="paper-removebg-preview.png" class="card3D" onclick="GameOn('paper')">
+                <img src="paper-removebg-preview.png" class="card3D"  onclick="GameOn('paper')">
                 <h2>Paper</h2>
             </div>
             <div class="card">
                 <div class="imgBox">
-                    <img src="scissors.jpg" onclick="GameOn('scissors')">
+                    <img src="scissors.jpg" id="Scissors" onclick="GameOn('scissors')">
                 </div>
                 <img src="scissorsnobackground.png" class="card3D" onclick="GameOn('scissors')">
                 <h2>Scissors</h2>
@@ -37,28 +37,25 @@
         </div>
         <!-- enemy's move -->
         <div class="title">
-            <h2>Enemy's Move</h2>
+            <h2>Enemy's Move:</h2>
         </div>
         <div class="container">
             <div class="card">
-                <div class="imgBox">
-                    <img src="rock.jpg" id="openModal">
+                <div class="imgBoxEnemy">
+                    <img src="rock.jpg" id="enemyRock">
                 </div>
-                <img src="rock-removebg-preview.png" class="card3D">
                 <h2>Rock</h2>
             </div>
             <div class="card">
-                <div class="imgBox">
-                    <img src="paper.jpg">
+                <div class="imgBoxEnemy">
+                    <img src="paper.jpg" id="enemyPaper">
                 </div>
-                <img src="paper-removebg-preview.png" class="card3D">
                 <h2>Paper</h2>
             </div>
             <div class="card">
-                <div class="imgBox">
-                    <img src="scissors.jpg">
+                <div class="imgBoxEnemy">
+                    <img src="scissors.jpg" id="enemyScissors">
                 </div>
-                <img src="scissorsnobackground.png" class="card3D">
                 <h2>Scissors</h2>
             </div>
         </div>

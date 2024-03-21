@@ -7,21 +7,25 @@ function ComputerMove() {
     return PCMove;
 }
 async function GameOn(move) {
+    ResetGlow();
     var computerMove = ComputerMove();
     if (move == "rock") {
-        if (computerMove == "rock") { console.log("Its a tie"); }
-        else if (computerMove == "paper") { console.log("You lose! Paper beats "); saveScore(); CheckUserNameValid(); }
-        else if (computerMove == "scissors") { console.log("You win! Rock beats scissors"); counter++; saveScore(counter); }
+        AddRockGlow();
+        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("Its a tie"); }
+        else if (computerMove == "paper") {AddEnemyPaperGlow(); console.log("You lose! Paper beats "); saveScore(); CheckUserNameValid(); }
+        else if (computerMove == "scissors") { AddEnemyScissorsGlow(); console.log("You win! Rock beats scissors"); counter++; saveScore(counter); }
     }
     else if (move == "paper") {
-        if (computerMove == "rock") { console.log("You win! Paper beats rock"); counter++; console.log(counter); }
-        else if (computerMove == "scissors") { console.log("You lose! Scissors beats paper"); saveScore(); CheckUserNameValid(); }
-        else { console.log("It's a tie!"); }
+        AddPaperGlow();
+        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("You win! Paper beats rock"); counter++; console.log(counter); }
+        else if (computerMove == "scissors") { AddEnemyPaperGlow(); console.log("You lose! Scissors beats paper"); saveScore(); CheckUserNameValid(); }
+        else {AddEnemyPaperGlow(); console.log("It's a tie!"); }
     }
     else {
-        if (computerMove == "rock") { console.log("You lose! Rock beats scissors"); saveScore(); CheckUserNameValid(); }
-        else if (computerMove == "paper") { console.log("You win! Scissors beats paper"); counter++; console.log(counter); }
-        else { console.log("It's a tie!"); }
+        AddScissorsGlow();
+        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("You lose! Rock beats scissors"); saveScore(); CheckUserNameValid(); }
+        else if (computerMove == "paper") { AddEnemyPaperGlow(); console.log("You win! Scissors beats paper"); counter++; console.log(counter);}
+        else { AddEnemyScissorsGlow(); console.log("It's a tie!"); }
     }
     console.log(counter);
 }
@@ -60,4 +64,5 @@ async function GetScore() {
     console.log(json);
     return json;
 }
+
 
