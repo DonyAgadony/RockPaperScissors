@@ -89,7 +89,7 @@ body {
     opacity: 1;
 }
 
-h1 {
+.title h1 {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -209,3 +209,15 @@ h2 {
     border-radius: 20px;
     /* Add glow effect */
 }
+.ULose{
+    display: none;
+}
+.UWin{
+    display: none;
+    border:  5px solid black;
+    border-radius: 20px;
+}
+.UWin h1{
+    color: white;
+}
+

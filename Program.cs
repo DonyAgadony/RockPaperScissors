@@ -48,10 +48,6 @@ class Program
 
             string filePath = "." + absPath;
             bool isHtml = request.AcceptTypes!.Contains("text/html");
-
-
-
-
             if (File.Exists(filePath))
             {
                 byte[] fileBytes = File.ReadAllBytes(filePath);
@@ -65,9 +61,16 @@ class Program
             }
             else if (absPath == "/addPlayer")
             {
-                string playerString = GetBody(request);
-                Player player = JsonSerializer.Deserialize<Player>(playerString)!;
-                players = [.. players, player];
+                try
+                {
+                    string playerString = GetBody(request);
+                    Player player = JsonSerializer.Deserialize<Player>(playerString)!;
+                    players = [.. players, player];
+                }
+                catch
+                {
+                    Console.WriteLine("Unwanted Change has happend");
+                }
             }
             else if (absPath == "/getPlayers")
             {
@@ -78,10 +81,17 @@ class Program
             }
             else if (absPath == "/addScore")
             {
-                string scoreString = GetBody(request);
-                Console.WriteLine(scoreString);
-                score = int.Parse(scoreString);
-                Console.WriteLine(score);
+                try
+                {
+                    string scoreString = GetBody(request);
+                    Console.WriteLine(scoreString);
+                    score = int.Parse(scoreString);
+                    Console.WriteLine(score);
+                }
+                catch
+                {
+                    Console.WriteLine("Unwanted Change has happend");
+                }
             }
             else if (absPath == "/getScore")
             {
@@ -96,21 +106,29 @@ class Program
     }
     public static Player[] GetTopTen(Player[] players)
     {
-        Console.WriteLine(players.Length);
-        if (players.Length > 10)
+        try
         {
+            Console.WriteLine(players.Length);
+            if (players.Length > 10)
+            {
 
-            return players.OrderBy((player) =>
+                return players.OrderBy((player) =>
+                {
+                    return -player.Points;
+                }).Reverse().ToArray()[..10];
+            }
+            else
             {
-                return -player.Points;
-            }).Reverse().ToArray()[..10];
+                return players.OrderBy((player) =>
+                {
+                    return -player.Points;
+                }).ToArray();
+            }
         }
-        else
+        catch
         {
-            return players.OrderBy((player) =>
-            {
-                return -player.Points;
-            }).ToArray();
+            Console.WriteLine("Unwanted Change has happend"); ;
+            return players;
         }
     }
     public static string GetBody(HttpListenerRequest request)
