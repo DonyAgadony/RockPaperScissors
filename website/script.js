@@ -37,3 +37,33 @@ function ResetGlow() {
     document.getElementById("enemyRock").style.boxShadow = null;
     document.getElementById("enemyScissors").style.boxShadow = null;
 }
+function Win() {
+    console.log("Enterd Win");
+    let div = document.getElementById("CommentOnScore");
+    div.innerHTML = null;
+    let Comment = document.createElement("div");
+    Comment.style.display = "block";
+    Comment.class = "death-background";
+    Comment.innerText = "You Won!";
+    div.appendChild(Comment);
+}
+function Tie() {
+    console.log("Enterd Tie");
+    let div = document.getElementById("CommentOnScore");
+    div.innerHTML = null;
+    let Comment = document.createElement("div");
+    Comment.style.display = "block";
+    Comment.class = "death-background";
+    Comment.innerText = "Its A Tie";
+    div.appendChild(Comment);
+}
+function Lose() {
+    console.log("Enterd Lose");
+    let div = document.getElementById("CommentOnScore");
+    div.innerHTML = null;
+    let Comment = document.createElement("div");
+    Comment.style.display = "block";
+    Comment.class = "death-background";
+    Comment.innerText = "You Lost!";
+    div.appendChild(Comment);
+}

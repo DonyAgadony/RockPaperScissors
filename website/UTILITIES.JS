@@ -11,21 +11,21 @@ async function GameOn(move) {
     var computerMove = ComputerMove();
     if (move == "rock") {
         AddRockGlow();
-        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("Its a tie"); }
-        else if (computerMove == "paper") {AddEnemyPaperGlow(); console.log("You lose! Paper beats "); saveScore(); CheckUserNameValid(); }
-        else if (computerMove == "scissors") { AddEnemyScissorsGlow(); console.log("You win! Rock beats scissors"); counter++; saveScore(counter); }
+        if (computerMove == "rock") { Tie(); setTimeout(console.log("delayed code"), 2000); AddEnemyRockGlow(); console.log("Its a tie"); }
+        else if (computerMove == "paper") { Lose(); setTimeout(console.log("delayed code"), 5000); AddEnemyPaperGlow(); console.log("You lose! Paper beats "); saveScore(); CheckUserNameValid(); }
+        else if (computerMove == "scissors") { Win(); setTimeout(console.log("delayed code"), 2000); AddEnemyScissorsGlow(); console.log("You win! Rock beats scissors"); counter++; saveScore(counter); }
     }
     else if (move == "paper") {
         AddPaperGlow();
-        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("You win! Paper beats rock"); counter++; console.log(counter); }
-        else if (computerMove == "scissors") { AddEnemyPaperGlow(); console.log("You lose! Scissors beats paper"); saveScore(); CheckUserNameValid(); }
-        else {AddEnemyPaperGlow(); console.log("It's a tie!"); }
+        if (computerMove == "rock") { Win(); setTimeout(console.log("delayed code"), 2000); AddEnemyRockGlow(); console.log("You win! Paper beats rock"); counter++; console.log(counter); }
+        else if (computerMove == "scissors") { Lose(); setTimeout(console.log("delayed code"), 5000); AddEnemyPaperGlow(); console.log("You lose! Scissors beats paper"); saveScore(); CheckUserNameValid(); }
+        else { Tie(); setTimeout(console.log("delayed code"), 2000); AddEnemyPaperGlow(); console.log("It's a tie!"); }
     }
     else {
         AddScissorsGlow();
-        if (computerMove == "rock") { AddEnemyRockGlow(); console.log("You lose! Rock beats scissors"); saveScore(); CheckUserNameValid(); }
-        else if (computerMove == "paper") { AddEnemyPaperGlow(); console.log("You win! Scissors beats paper"); counter++; console.log(counter);}
-        else { AddEnemyScissorsGlow(); console.log("It's a tie!"); }
+        if (computerMove == "rock") { Lose(); setTimeout(console.log("delayed code"), 5000); AddEnemyRockGlow(); console.log("You lose! Rock beats scissors"); saveScore(); CheckUserNameValid(); }
+        else if (computerMove == "paper") { Win(); setTimeout(console.log("delayed code"), 2000); AddEnemyPaperGlow(); console.log("You win! Scissors beats paper"); counter++; console.log(counter); }
+        else { Tie(); setTimeout(console.log("delayed code"), 2000); AddEnemyScissorsGlow(); console.log("It's a tie!"); }
     }
     console.log(counter);
 }

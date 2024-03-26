@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+@font-face {
+    font-family: optimusPrime;
+    src: url(OptimusPrincepsSemiBold.ttf);
+}
+
 
 *::before * {
     margin: 0;
@@ -192,6 +197,7 @@ h2 {
     justify-content: flex-end;
     display: flex;
 }
+
 .container .card .imgBoxEnemy {
     position: absolute;
     inset: 0;
@@ -209,15 +215,62 @@ h2 {
     border-radius: 20px;
     /* Add glow effect */
 }
-.ULose{
+
+.death-background {
     display: none;
-}
-.UWin{
-    display: none;
-    border:  5px solid black;
-    border-radius: 20px;
-}
-.UWin h1{
-    color: white;
+    background: black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    animation: fade-in 10s linear;
+
+    * {
+        color: #ff0000;
+        font-family: "optimusPrime", sans-serif;
+        letter-spacing: 5px;
+        font-size: 8em;
+        font-weight: 400;
+        animation: fade-in 10s linear, text-zoom 5s linear;
+    }
 }
 
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-zoom {
+    0% {
+        font-size: 5em;
+    }
+
+    25% {
+        font-size: 6em;
+    }
+
+    50% {
+        font-size: 7em;
+    }
+
+    75% {
+        font-size: 8em;
+    }
+
+    100% {
+        font-size: 8em;
+    }
+}

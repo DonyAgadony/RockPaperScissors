@@ -7,13 +7,9 @@
 
 <body>
 
-    <div class="ULose">
-        <h1>You Lose!</h1>
-    </div>
-    <div class="UWin">
-        <h1>You Win!</h1>
-    </div>
     <div class="everything">
+        <div id="CommentOnScore">
+        </div>
         <div class="title">
             <h1>Choose Your Move:</h1>
         </div>
@@ -30,7 +26,7 @@
                 <div class="imgBox">
                     <img src="paper.jpg" onclick="GameOn('paper')" id="Paper">
                 </div>
-                <img src="paper-removebg-preview.png" class="card3D"  onclick="GameOn('paper')">
+                <img src="paper-removebg-preview.png" class="card3D" onclick="GameOn('paper')">
                 <h2>Paper</h2>
             </div>
             <div class="card">
@@ -74,6 +70,9 @@
         <div class="buttondiv">
             <div class="rulesdiv">
                 <button onclick="window.location.href='./rules.html'" class="rules">Dont Know How to play?</button>
+            </div>
+            <div class="rulesdiv">
+                <button onclick="window.location.href='./lore.html'" class="rules">The OG Legend</button>
             </div>
         </div>
     </div>
