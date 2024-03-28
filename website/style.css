@@ -52,7 +52,7 @@ body {
     border-radius: 20px;
 }
 
-.container .card:hover .imgBox img {
+.container .card .imgBox:hover img {
     opacity: 15%;
 }
 
@@ -213,7 +213,6 @@ h2 {
     object-fit: cover;
     transition: 0.5s;
     border-radius: 20px;
-    /* Add glow effect */
 }
 
 .death-background {
@@ -228,8 +227,9 @@ h2 {
     opacity: 1;
     animation: fade-in 10s linear;
 
+    color: #ff0000;
+
     * {
-        color: #ff0000;
         font-family: "optimusPrime", sans-serif;
         letter-spacing: 5px;
         font-size: 8em;

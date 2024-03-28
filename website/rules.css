@@ -59,11 +59,8 @@ body {
 }
 
 .homepage {
-    position: absolute;
     display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    padding-left: 35%;
+    justify-content: right;
 }
 
 #sbutton {
