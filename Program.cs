@@ -115,7 +115,7 @@ class Program
                 return players.OrderBy((player) =>
                 {
                     return -player.Points;
-                }).Reverse().ToArray()[..10];
+                }).ToArray()[..10];
             }
             else
             {
